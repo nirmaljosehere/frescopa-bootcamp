@@ -61,6 +61,15 @@ function loadScript(src) {
     const s = document.createElement('script');
     s.src = src;
     s.async = false; // preserve execution order
+    // Under a 'strict-dynamic' CSP, an injected script only runs if it carries
+    // the page nonce. EDS exposes it on window.nonce / the current script tag.
+    const nonce = window.nonce
+      || document.currentScript?.nonce
+      || document.querySelector('script[nonce]')?.nonce;
+    if (nonce) {
+      s.setAttribute('nonce', nonce);
+      s.nonce = nonce;
+    }
     s.onload = resolve;
     s.onerror = () => reject(new Error(`Failed to load ${src}`));
     document.head.appendChild(s);
