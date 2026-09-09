@@ -1,0 +1,17 @@
+/* Brand Concierge block */
+
+.brand-concierge {
+  width: 100%;
+}
+
+/* Give the agent room — the original demo used a full-viewport body. */
+.brand-concierge #brand-concierge-mount {
+  min-height: 80vh;
+  width: 100%;
+}
+
+/* Carried over from the original index.html inline <style>. */
+.brand-concierge .bc-card__image {
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+}
