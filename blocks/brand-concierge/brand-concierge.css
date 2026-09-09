@@ -1,12 +1,10 @@
 /* Brand Concierge block */
 
-/* The agent is a container-query widget: it picks mobile/tablet/desktop layout
-   from the width of its OWN mount, not the viewport. In a normal EDS content
-   column the mount is < 768px, so it renders the cramped mobile layout (text
-   pills, no image cards). Break the block out to full viewport width so it
-   measures "desktop" and renders the proper card grid. The agent centers its
-   own content at --content-width-desktop (800px), so full-bleed doesn't
-   over-stretch the chat column. */
+/* The agent is a container-query widget: it sizes its layout from the width of
+   its OWN mount, not the viewport. In a normal EDS content column the mount is
+   < 768px, so it renders the cramped mobile layout. Break the block out to full
+   viewport width so it measures "desktop". The agent centers its own content at
+   --content-width-desktop (800px), so full-bleed doesn't over-stretch. */
 .brand-concierge {
   width: 100vw;
   max-width: 100vw;
@@ -14,12 +12,26 @@
   transform: translateX(-50%);
 }
 
-/* Give the agent a stable, tall box to mount into so it doesn't render into a
-   zero/auto-height container and flash on load. */
+/* Give the agent a real, fixed-height flex column to mount into — this mirrors
+   the original demo's full-viewport <body>. Without a genuine height, the
+   agent's bottom-anchored disclaimer (position:absolute; bottom:0) lands on top
+   of the input instead of below it. */
 .brand-concierge .brand-concierge-mount {
   position: relative;
   width: 100%;
-  min-height: 85vh;
+  height: 85vh;
+}
+
+.brand-concierge .brand-concierge-mount > .brand-concierge-flex-wrapper {
+  height: 100%;
+}
+
+/* Belt-and-braces: if the disclaimer still overlaps in the welcome state, let it
+   flow under the input rather than being absolutely pinned. */
+.brand-concierge .brand-concierge-container.initial-state .disclaimer-bottom-page {
+  position: static;
+  transform: none;
+  margin: var(--spacing-md) auto 0;
 }
 
 /* Carried over from the original index.html inline <style>. */
