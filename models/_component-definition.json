@@ -1,0 +1,113 @@
+{
+  "groups": [
+    {
+      "title": "Default Content",
+      "id": "default",
+      "components": [
+        {
+          "...": "./_text.json#/definitions"
+        },
+        {
+          "...": "./_image.json#/definitions"
+        }
+      ]
+    },
+    {
+      "title": "Sections",
+      "id": "sections",
+      "components": [
+        {
+          "...": "./_section.json#/definitions"
+        }
+      ]
+    },
+    {
+      "title": "Blocks",
+      "id": "blocks",
+      "components": [
+        {
+          "...": "../blocks/accordion/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/cards/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/carousel/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/columns/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/enrichment/_*.json#/definitions"
+        },
+
+        {
+          "...": "../blocks/fragment/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/hero/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/targeted-block/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/commerce-*/_*.json#/definitions"
+        }
+      ]
+    },
+    {
+      "title": "Frescopa Blocks",
+      "id": "frescopa-blocks",
+      "components": [
+        {
+          "...": "../blocks/hero-promo-light/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/hero-banner-solid/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/hero-teaser-teal/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/columns-promo/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/columns-reward/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/columns-offer/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/columns-article/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/cards-tiles/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/cards-feature/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/cards-product/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/cards-numbered/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/embed-map/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/embed-video/_*.json#/definitions"
+        }
+      ]
+    },
+    {
+      "title": "Product",
+      "id": "product",
+      "components": [
+        {
+          "...": "../blocks/product-*/_*.json#/definitions"
+        }
+      ]
+    }
+  ]
+}

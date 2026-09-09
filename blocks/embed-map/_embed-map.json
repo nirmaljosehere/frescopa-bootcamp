@@ -1,0 +1,39 @@
+{
+  "definitions": [
+    {
+      "title": "Embed Map",
+      "id": "embed-map",
+      "model": "embed-map",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 1,
+          "fields": [
+            { "name": "link", "selector": "div>div>a[href]" },
+            { "name": "linkText", "selector": "div>div>a" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "embed-map",
+      "fields": [
+        {
+          "component": "text",
+          "name": "link",
+          "label": "Map URL",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "linkText",
+          "label": "Link Text",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

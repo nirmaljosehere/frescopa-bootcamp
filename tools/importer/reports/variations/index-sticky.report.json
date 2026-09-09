@@ -1,0 +1,15 @@
+{
+  "status": "success",
+  "url": "https://frescopa.coffee/variations/index-sticky",
+  "path": "variations/index-sticky",
+  "timestamp": "2026-06-12T10:36:19.973Z",
+  "title": "Frescopa - Coffee, Tea & Accessories",
+  "template": "homepage",
+  "blocks": [
+    "hero-promo-light",
+    "columns-promo",
+    "embed-map",
+    "cards-tiles",
+    "cards-feature"
+  ]
+}

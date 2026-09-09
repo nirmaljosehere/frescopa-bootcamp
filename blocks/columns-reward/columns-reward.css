@@ -1,0 +1,79 @@
+.columns-reward {
+  background-image: url('https://frescopa.coffee/styles/backgrounds/reward-banner-v1.svg');
+  background-size: cover;
+  background-position: 15% 0%;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.columns-reward :is(h1, h2, h3, h4, h5, h6),
+.columns-reward p {
+  color: var(--color-neutral-50);
+}
+
+.columns-reward :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: 0;
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+.columns-reward > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-reward img {
+  width: 100%;
+}
+
+.columns-reward > div > div {
+  order: 1;
+}
+
+.columns-reward > div > .columns-reward-img-col {
+  order: 0;
+}
+
+.columns-reward > div > .columns-reward-img-col img {
+  display: block;
+}
+
+.columns-reward a:any-link {
+  display: inline-block;
+  padding: var(--brand-button-padding);
+  border: 3px solid var(--brand-accent-color);
+  border-radius: var(--brand-button-radius);
+  background-color: var(--brand-accent-color);
+  color: var(--color-neutral-50);
+  font-weight: 500;
+  letter-spacing: var(--brand-button-letter-spacing);
+  text-decoration: none;
+}
+
+.columns-reward a:any-link:hover {
+  color: var(--color-brand-600);
+  text-decoration: none;
+}
+
+@media (min-width: 900px) {
+  .columns-reward {
+    padding: 32px 64px 32px 280px;
+  }
+
+  .columns-reward > div {
+    align-items: center;
+    justify-content: center;
+    flex-direction: unset;
+    gap: 80px;
+  }
+
+  .columns-reward > div > div:first-child {
+    flex: 0 1 620px;
+    order: unset;
+  }
+
+  .columns-reward > div > div:last-child {
+    flex: 0 0 auto;
+    order: unset;
+  }
+}

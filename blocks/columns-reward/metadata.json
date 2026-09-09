@@ -1,0 +1,38 @@
+{
+  "variantName": "columns-reward",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-06-12T09:24:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://frescopa.coffee/",
+    "originPage": "homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "accent",
+    "density": "minimal",
+    "purpose": "feature",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "illustration + heading + paragraph | CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "rewards / gift-card accent promo banners",
+      "side-by-side call-outs on a colored/accent background",
+      "loyalty or sign-up CTAs"
+    ],
+    "notSuitableFor": [
+      "light-background offer/subscription promos (use columns-promo)",
+      "repeating card grids"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-12T09:24:00.000Z"
+  }
+}

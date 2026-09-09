@@ -1,0 +1,74 @@
+/* Solid-color text-only hero banner: rounded band, white eyebrow + heading,
+   no background image and no CTA (e.g. the Tea / Coffee category intro). */
+.hero-banner-solid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 160px;
+  padding: 24px 32px;
+  background-color: rgb(235 164 57);
+  color: var(--color-neutral-50);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.hero-banner-solid p,
+.hero-banner-solid h1,
+.hero-banner-solid h2,
+.hero-banner-solid h3,
+.hero-banner-solid h4,
+.hero-banner-solid h5,
+.hero-banner-solid h6 {
+  margin: 0;
+  color: var(--color-neutral-50);
+}
+
+/* color modifier: brand teal/blue band (e.g. the Machines category intro) */
+.hero-banner-solid.blue {
+  background-color: var(--brand-primary-color);
+}
+
+/* color modifier: dark charcoal band (e.g. the Accessories category intro) */
+.hero-banner-solid.black {
+  background-color: rgb(44 44 44);
+}
+
+/* eyebrow label */
+.hero-banner-solid .hero-banner-solid-eyebrow {
+  font-family: var(--body-font-family);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* main title */
+.hero-banner-solid h1,
+.hero-banner-solid h2,
+.hero-banner-solid h3,
+.hero-banner-solid h4,
+.hero-banner-solid h5,
+.hero-banner-solid h6 {
+  font-family: var(--heading-font-family);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+@media (min-width: 900px) {
+  .hero-banner-solid {
+    min-height: 200px;
+    padding: 32px 48px;
+  }
+
+  .hero-banner-solid h1,
+  .hero-banner-solid h2,
+  .hero-banner-solid h3,
+  .hero-banner-solid h4,
+  .hero-banner-solid h5,
+  .hero-banner-solid h6 {
+    font-size: 54px;
+  }
+}
+

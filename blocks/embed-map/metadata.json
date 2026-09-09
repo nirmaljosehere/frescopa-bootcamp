@@ -1,0 +1,38 @@
+{
+  "variantName": "embed-map",
+  "baseBlock": "embed",
+  "version": "1.0.0",
+  "created": "2026-06-12T09:23:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://frescopa.coffee/",
+    "originPage": "homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "purpose": "embed",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "embedded interactive map/iframe via URL",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "store locator / interactive map embeds",
+      "third-party iframe content",
+      "video or social embeds requiring a contained frame"
+    ],
+    "notSuitableFor": [
+      "native default-content imagery",
+      "structured card or column layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-12T09:23:00.000Z"
+  }
+}

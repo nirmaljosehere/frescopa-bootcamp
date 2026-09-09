@@ -1,0 +1,38 @@
+{
+  "variantName": "columns-article",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-06-13T08:45:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://frescopa.coffee/coffee",
+    "originPage": "coffee category page",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "accent",
+    "density": "minimal",
+    "purpose": "editorial",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "heading + paragraph centered on a full-width accent panel",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "editorial / article call-out panels on a colored background",
+      "centered heading + paragraph highlight blocks",
+      "text-only emphasis panels without images or CTAs"
+    ],
+    "notSuitableFor": [
+      "side-by-side promos with CTAs (use columns-promo / columns-reward / columns-offer)",
+      "panels requiring images or buttons"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/coffee"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-13T08:45:00.000Z"
+  }
+}

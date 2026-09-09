@@ -1,0 +1,41 @@
+{
+  "definitions": [
+    {
+      "title": "Columns Offer",
+      "id": "columns-offer",
+      "model": "columns-offer",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 1,
+          "fields": [
+            { "name": "image", "selector": "div>div>picture>img[src]" },
+            { "name": "imageAlt", "selector": "div>div>picture>img[alt]" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "columns-offer",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Banner Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image Alt",
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

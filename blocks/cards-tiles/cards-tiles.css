@@ -1,0 +1,53 @@
+/* section sits on white, not the boilerplate grey "light" band */
+main .section.light.cards-tiles-container {
+  background-color: transparent;
+}
+
+.cards-tiles > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.cards-tiles > ul > li {
+  background-color: var(--background-color);
+  border-radius: 12px;
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 12%);
+  padding: 24px 12px;
+  text-align: center;
+}
+
+.cards-tiles .cards-tiles-card-image {
+  line-height: 0;
+}
+
+.cards-tiles .cards-tiles-card-image img {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.cards-tiles .cards-tiles-card-body {
+  margin-top: 12px;
+}
+
+.cards-tiles .cards-tiles-card-body :is(h1, h2, h3, h4, h5, h6) {
+  font-size: 18px;
+  margin: 0;
+}
+
+@media (min-width: 600px) {
+  .cards-tiles > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .cards-tiles > ul {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

@@ -1,0 +1,61 @@
+/* keep the product grid on the page background, not the grey section fill */
+main .section.light.cards-product-container {
+  background-color: transparent;
+}
+
+.cards-product > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 600px) {
+  .cards-product > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.cards-product > ul > li {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background-color: var(--background-color);
+}
+
+.cards-product .cards-product-card-image {
+  line-height: 0;
+}
+
+.cards-product > ul > li img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+.cards-product .cards-product-card-body {
+  margin: 16px 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cards-product .cards-product-card-body h3,
+.cards-product .cards-product-card-body h4 {
+  margin: 0;
+  font-size: var(--heading-size-m);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.cards-product .cards-product-card-body p {
+  margin: 0;
+  color: var(--text-color);
+}
+
+.cards-product .cards-product-card-body .price,
+.cards-product .cards-product-card-body strong:last-child {
+  font-weight: 700;
+}

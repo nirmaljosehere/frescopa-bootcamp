@@ -1,0 +1,11 @@
+{
+  "type": "da",
+  "sites": {
+    "frescopa1": {
+      "previewOrg": "haug124",
+      "previewSite": "frescopa1",
+      "contentHostUrl": "https://content.da.live/haug124/frescopa1/",
+      "libraryUrl": "https://main--frescopa1--haug124.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

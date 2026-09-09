@@ -1,0 +1,284 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://frescopa.coffee/",
+        "https://frescopa.coffee/content/frescopa/es/",
+        "https://frescopa.coffee/en/",
+        "https://frescopa.coffee/es/",
+        "https://frescopa.coffee/event-registration",
+        "https://frescopa.coffee/form/event-registration",
+        "https://frescopa.coffee/form/event-registration-v1",
+        "https://frescopa.coffee/form/event-registration-v2",
+        "https://frescopa.coffee/fr/",
+        "https://frescopa.coffee/fr/fr-index",
+        "https://frescopa.coffee/jp/",
+        "https://frescopa.coffee/variations/event-registration",
+        "https://frescopa.coffee/variations/index-sticky",
+        "https://frescopa.coffee/variations/index-top"
+      ],
+      "description": "Primary landing layout with hero banner, feature sections, product category grid, and promotional content blocks",
+      "blocks": [
+        {
+          "name": "hero-promo-light",
+          "instances": [
+            ".teaser.block"
+          ]
+        },
+        {
+          "name": "columns-promo",
+          "instances": [
+            ".offer.block"
+          ]
+        },
+        {
+          "name": "embed-map",
+          "instances": [
+            ".store-locator.block"
+          ]
+        },
+        {
+          "name": "cards-tiles",
+          "instances": [
+            ".card-tiles .cards.block"
+          ]
+        },
+        {
+          "name": "cards-feature",
+          "instances": [
+            ".home .cards.block"
+          ]
+        },
+        {
+          "name": "columns-reward",
+          "instances": [
+            ".reward.block"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero quiz banner",
+          "selector": ".section.teaser-container",
+          "style": null,
+          "blocks": [
+            "hero-promo-light"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Subscription promo",
+          "selector": ".section.offer-container",
+          "style": "light",
+          "blocks": [
+            "columns-promo"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Store locator",
+          "selector": ".section.store-locator-container",
+          "style": "light",
+          "blocks": [
+            "embed-map"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "Product category tiles",
+          "selector": ".section.card-tiles.cards-container",
+          "style": "light",
+          "blocks": [
+            "cards-tiles"
+          ],
+          "defaultContent": [
+            ".section.card-tiles h2"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "Feature cards",
+          "selector": ".section.home.cards-container",
+          "style": "light",
+          "blocks": [
+            "cards-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6",
+          "name": "Rewards promo",
+          "selector": ".section.reward-container",
+          "style": "accent",
+          "blocks": [
+            "columns-reward"
+          ],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "coffee-category",
+      "urls": [
+        "https://frescopa.coffee/coffee",
+        "https://frescopa.coffee/en/coffee",
+        "https://frescopa.coffee/es/coffee",
+        "https://frescopa.coffee/fr/coffee",
+        "https://frescopa.coffee/jp/coffee"
+      ],
+      "description": "Coffee category page with hero header and product/feature card grid",
+      "blocks": [
+        {
+          "name": "hero-promo-light",
+          "instances": [
+            ".teaser.block"
+          ]
+        },
+        {
+          "name": "cards-product",
+          "instances": [
+            ".product-list-page-custom.block"
+          ]
+        },
+        {
+          "name": "columns-offer",
+          "instances": [
+            ".dm-scene7-template.block"
+          ]
+        },
+        {
+          "name": "columns-article",
+          "instances": [
+            ".article.block"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Coffee hero banner",
+          "selector": ".teaser-wrapper",
+          "style": "dark",
+          "blocks": [
+            "hero-promo-light"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Bagged Coffee product grid",
+          "selector": ".section.product-list-page-custom-container",
+          "style": "light",
+          "blocks": [
+            "cards-product"
+          ],
+          "defaultContent": [
+            ".product-list-page-custom-container h3"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Limited-time offer banner",
+          "selector": ".dm-scene7-template-wrapper",
+          "style": null,
+          "blocks": [
+            "columns-offer"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "Coffee Pods product grid",
+          "selector": ".section.product-list-page-custom-container",
+          "style": "light",
+          "blocks": [
+            "cards-product"
+          ],
+          "defaultContent": [
+            ".product-list-page-custom-container h3"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "Espresso article panel",
+          "selector": ".article-wrapper",
+          "style": "accent",
+          "blocks": [
+            "columns-article"
+          ],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "content-guide-page-alt",
+      "urls": [
+        "https://frescopa.coffee/sustainability",
+        "https://frescopa.coffee/coffee-beans-guide21"
+      ],
+      "description": "Editorial content layout: hero intro, numbered cards, and a media/video section",
+      "blocks": [
+        {
+          "name": "hero-teaser-teal",
+          "instances": [
+            ".teaser.block"
+          ]
+        },
+        {
+          "name": "cards-numbered",
+          "instances": [
+            ".cards.block"
+          ]
+        },
+        {
+          "name": "embed-video",
+          "instances": [
+            ".dm-video.block"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Sustainability hero",
+          "selector": ".teaser-wrapper",
+          "style": null,
+          "blocks": [
+            "hero-teaser-teal"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Focus areas numbered cards",
+          "selector": ".section.cards-container",
+          "style": null,
+          "blocks": [
+            "cards-numbered"
+          ],
+          "defaultContent": [
+            ".cards-container h2"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Sustainability video",
+          "selector": ".dm-video-wrapper",
+          "style": null,
+          "blocks": [
+            "embed-video"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

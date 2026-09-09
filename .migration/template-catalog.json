@@ -1,0 +1,472 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "representativePages": [
+        "https://frescopa.coffee/",
+        "https://frescopa.coffee/event-registration"
+      ],
+      "urls": [
+        "https://frescopa.coffee/",
+        "https://frescopa.coffee/content/frescopa/es/",
+        "https://frescopa.coffee/en/",
+        "https://frescopa.coffee/es/",
+        "https://frescopa.coffee/event-registration",
+        "https://frescopa.coffee/form/event-registration",
+        "https://frescopa.coffee/form/event-registration-v1",
+        "https://frescopa.coffee/form/event-registration-v2",
+        "https://frescopa.coffee/fr/",
+        "https://frescopa.coffee/fr/fr-index",
+        "https://frescopa.coffee/jp/",
+        "https://frescopa.coffee/variations/event-registration",
+        "https://frescopa.coffee/variations/index-sticky",
+        "https://frescopa.coffee/variations/index-top"
+      ],
+      "description": "Primary landing layout with hero banner, feature sections, and promotional content blocks"
+    },
+    {
+      "name": "about-content-page",
+      "representativePages": [
+        "https://frescopa.coffee/about-us"
+      ],
+      "urls": [
+        "https://frescopa.coffee/about-us"
+      ],
+      "description": "Editorial content page with stacked text sections and supporting imagery"
+    },
+    {
+      "name": "product-category-listing",
+      "representativePages": [
+        "https://frescopa.coffee/accessories"
+      ],
+      "urls": [
+        "https://frescopa.coffee/accessories",
+        "https://frescopa.coffee/es/accessories",
+        "https://frescopa.coffee/fr/accessories",
+        "https://frescopa.coffee/jp/accessories"
+      ],
+      "description": "Category page presenting a grid of product cards with category intro"
+    },
+    {
+      "name": "blog-index",
+      "representativePages": [
+        "https://frescopa.coffee/blog"
+      ],
+      "urls": [
+        "https://frescopa.coffee/blog"
+      ],
+      "description": "Blog landing page listing article cards in a grid layout"
+    },
+    {
+      "name": "blog-article",
+      "representativePages": [
+        "https://frescopa.coffee/blog/brew-better-days",
+        "https://frescopa.coffee/blog/cafe-vibes"
+      ],
+      "urls": [
+        "https://frescopa.coffee/blog/brew-better-days",
+        "https://frescopa.coffee/blog/cafe-vibes",
+        "https://frescopa.coffee/blog/caffeine-espresso",
+        "https://frescopa.coffee/blog/cold-brewing-101",
+        "https://frescopa.coffee/blog/moments-that-matter",
+        "https://frescopa.coffee/blog/whats-in-a-name"
+      ],
+      "description": "Article detail layout with title, hero image, and long-form body content"
+    },
+    {
+      "name": "marketing-landing",
+      "representativePages": [
+        "https://frescopa.coffee/business",
+        "https://frescopa.coffee/en/subscription",
+        "https://frescopa.coffee/variations/subscription-var1"
+      ],
+      "urls": [
+        "https://frescopa.coffee/business",
+        "https://frescopa.coffee/en/subscription",
+        "https://frescopa.coffee/es/business",
+        "https://frescopa.coffee/es/quiz",
+        "https://frescopa.coffee/es/subscription",
+        "https://frescopa.coffee/experiments/value-prop-headline-test/challenger-1",
+        "https://frescopa.coffee/fr/business",
+        "https://frescopa.coffee/fr/quiz",
+        "https://frescopa.coffee/fr/subscription",
+        "https://frescopa.coffee/jp/business",
+        "https://frescopa.coffee/jp/quiz",
+        "https://frescopa.coffee/jp/subscription",
+        "https://frescopa.coffee/quiz",
+        "https://frescopa.coffee/subscription",
+        "https://frescopa.coffee/variations/subscription-var1"
+      ],
+      "description": "Promotional landing layout with hero, value propositions, and call-to-action sections"
+    },
+    {
+      "name": "coffee-category",
+      "representativePages": [
+        "https://frescopa.coffee/coffee"
+      ],
+      "urls": [
+        "https://frescopa.coffee/coffee",
+        "https://frescopa.coffee/en/coffee",
+        "https://frescopa.coffee/es/coffee",
+        "https://frescopa.coffee/fr/coffee",
+        "https://frescopa.coffee/jp/coffee"
+      ],
+      "description": "Coffee category page with hero header and product/feature card grid"
+    },
+    {
+      "name": "content-guide-page",
+      "representativePages": [
+        "https://frescopa.coffee/coffee-beans-guide",
+        "https://frescopa.coffee/machines",
+        "https://frescopa.coffee/en/machines",
+        "https://frescopa.coffee/es/sustainability"
+      ],
+      "urls": [
+        "https://frescopa.coffee/coffee-beans-guide",
+        "https://frescopa.coffee/en/drafts/jalagari/machines",
+        "https://frescopa.coffee/en/machines",
+        "https://frescopa.coffee/es/contact-us",
+        "https://frescopa.coffee/es/machines",
+        "https://frescopa.coffee/es/sustainability",
+        "https://frescopa.coffee/fr/contact-us",
+        "https://frescopa.coffee/fr/machines",
+        "https://frescopa.coffee/fr/sustainability",
+        "https://frescopa.coffee/jp/contact-us",
+        "https://frescopa.coffee/jp/machines",
+        "https://frescopa.coffee/jp/sustainability",
+        "https://frescopa.coffee/machines",
+        "https://frescopa.coffee/variations/machines"
+      ],
+      "description": "Long-form guide layout with hero header and alternating text-and-image sections"
+    },
+    {
+      "name": "content-guide-page-alt",
+      "representativePages": [
+        "https://frescopa.coffee/coffee-beans-guide21",
+        "https://frescopa.coffee/sustainability"
+      ],
+      "urls": [
+        "https://frescopa.coffee/coffee-beans-guide21",
+        "https://frescopa.coffee/sustainability"
+      ],
+      "description": "Editorial content layout variant with stacked text and media sections"
+    },
+    {
+      "name": "article-fragment",
+      "representativePages": [
+        "https://frescopa.coffee/content/dam/frescopa/en/articles/discovering-the-artofpourovercoffee"
+      ],
+      "urls": [
+        "https://frescopa.coffee/content/dam/frescopa/en/articles/discovering-the-artofpourovercoffee",
+        "https://frescopa.coffee/content/dam/frescopa/en/articles/the-art-of-latteart",
+        "https://frescopa.coffee/content/dam/frescopa/en/articles/the-magic-of-espresso"
+      ],
+      "description": "Content fragment for articles with title and body used in DAM-stored content"
+    },
+    {
+      "name": "offer-fragment",
+      "representativePages": [
+        "https://frescopa.coffee/content/dam/frescopa/en/offers/fall-in-love-my-barista-subscription"
+      ],
+      "urls": [
+        "https://frescopa.coffee/content/dam/frescopa/en/offers/fall-in-love-my-barista-subscription"
+      ],
+      "description": "Promotional offer content fragment with headline and call-to-action"
+    },
+    {
+      "name": "quiz-step-fragment",
+      "representativePages": [
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/1-cup"
+      ],
+      "urls": [
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/1-cup",
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/2-cups",
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/3-4-cups",
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/5-cups",
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/beach",
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/cabin",
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/coffee-pods",
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/coffee-profile",
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/country",
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/cups-a-day",
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/drip-machine",
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/espresso-machine",
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/feel-type",
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/flavour-profile",
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/flavour-type",
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/french-press",
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/location",
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/making-coffee",
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/moka-pot",
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/pour-over",
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/roast-type",
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/rustic",
+        "https://frescopa.coffee/content/dam/frescopa/en/quiz/taste-type"
+      ],
+      "description": "Quiz step content fragment with prompt, options, and navigation elements"
+    },
+    {
+      "name": "adaptive-form",
+      "representativePages": [
+        "https://frescopa.coffee/content/forms/af/frescopa/enquire"
+      ],
+      "urls": [
+        "https://frescopa.coffee/content/forms/af/frescopa/enquire"
+      ],
+      "description": "Adaptive form page composed of form fields and submission controls"
+    },
+    {
+      "name": "signup-form-draft",
+      "representativePages": [
+        "https://frescopa.coffee/en/drafts/jalagari/signup"
+      ],
+      "urls": [
+        "https://frescopa.coffee/en/drafts/jalagari/signup"
+      ],
+      "description": "Draft signup page with form fields and supporting marketing copy"
+    },
+    {
+      "name": "product-listing-page",
+      "representativePages": [
+        "https://frescopa.coffee/en/drafts/jalagari/signup1",
+        "https://frescopa.coffee/en/products",
+        "https://frescopa.coffee/locations"
+      ],
+      "urls": [
+        "https://frescopa.coffee/en/drafts/jalagari/signup1",
+        "https://frescopa.coffee/en/locations",
+        "https://frescopa.coffee/en/products",
+        "https://frescopa.coffee/es/locations",
+        "https://frescopa.coffee/es/products",
+        "https://frescopa.coffee/fr/locations",
+        "https://frescopa.coffee/fr/products",
+        "https://frescopa.coffee/jp/locations",
+        "https://frescopa.coffee/jp/products",
+        "https://frescopa.coffee/jp/signup",
+        "https://frescopa.coffee/locations"
+      ],
+      "description": "Listing layout presenting cards or tiles with intro header section"
+    },
+    {
+      "name": "locations-list",
+      "representativePages": [
+        "https://frescopa.coffee/en/locations/locationslist"
+      ],
+      "urls": [
+        "https://frescopa.coffee/en/locations/locationslist",
+        "https://frescopa.coffee/locations/locationlist"
+      ],
+      "description": "Locations listing layout with repeated location entries"
+    },
+    {
+      "name": "product-detail",
+      "representativePages": [
+        "https://frescopa.coffee/en/products/default"
+      ],
+      "urls": [
+        "https://frescopa.coffee/en/products/default",
+        "https://frescopa.coffee/es/products/default"
+      ],
+      "description": "Product detail layout with product imagery, attributes, and description"
+    },
+    {
+      "name": "tea-category",
+      "representativePages": [
+        "https://frescopa.coffee/en/tea"
+      ],
+      "urls": [
+        "https://frescopa.coffee/en/tea",
+        "https://frescopa.coffee/es/tea",
+        "https://frescopa.coffee/fr/tea",
+        "https://frescopa.coffee/jp/tea",
+        "https://frescopa.coffee/tea"
+      ],
+      "description": "Tea category page with hero header and product/feature card grid"
+    },
+    {
+      "name": "locale-homepage-es",
+      "representativePages": [
+        "https://frescopa.coffee/es"
+      ],
+      "urls": [
+        "https://frescopa.coffee/es"
+      ],
+      "description": "Spanish locale homepage with hero banner and feature sections"
+    },
+    {
+      "name": "footer-fragment-es",
+      "representativePages": [
+        "https://frescopa.coffee/es/footer"
+      ],
+      "urls": [
+        "https://frescopa.coffee/es/footer",
+        "https://frescopa.coffee/footer"
+      ],
+      "description": "Spanish footer fragment with link columns and legal row"
+    },
+    {
+      "name": "nav-fragment-es",
+      "representativePages": [
+        "https://frescopa.coffee/es/nav"
+      ],
+      "urls": [
+        "https://frescopa.coffee/es/nav",
+        "https://frescopa.coffee/fr/nav",
+        "https://frescopa.coffee/jp/nav",
+        "https://frescopa.coffee/nav"
+      ],
+      "description": "Spanish navigation fragment with menu links and branding"
+    },
+    {
+      "name": "placeholders-fragment-es",
+      "representativePages": [
+        "https://frescopa.coffee/es/placeholders"
+      ],
+      "urls": [
+        "https://frescopa.coffee/es/placeholders"
+      ],
+      "description": "Spanish placeholders configuration fragment as key-value content"
+    },
+    {
+      "name": "product-metadata-fragment",
+      "representativePages": [
+        "https://frescopa.coffee/es/products/default/metadata"
+      ],
+      "urls": [
+        "https://frescopa.coffee/es/products/default/metadata"
+      ],
+      "description": "Metadata configuration fragment storing key-value page properties"
+    },
+    {
+      "name": "search-page-es",
+      "representativePages": [
+        "https://frescopa.coffee/es/search"
+      ],
+      "urls": [
+        "https://frescopa.coffee/es/search"
+      ],
+      "description": "Spanish search results layout with search box and results region"
+    },
+    {
+      "name": "signup-page-es",
+      "representativePages": [
+        "https://frescopa.coffee/es/signup"
+      ],
+      "urls": [
+        "https://frescopa.coffee/es/signup",
+        "https://frescopa.coffee/fr/signup"
+      ],
+      "description": "Spanish signup page with form fields and marketing copy"
+    },
+    {
+      "name": "locale-homepage-fr",
+      "representativePages": [
+        "https://frescopa.coffee/fr"
+      ],
+      "urls": [
+        "https://frescopa.coffee/fr"
+      ],
+      "description": "French locale homepage with hero banner and feature sections"
+    },
+    {
+      "name": "footer-fragment-fr",
+      "representativePages": [
+        "https://frescopa.coffee/fr/footer"
+      ],
+      "urls": [
+        "https://frescopa.coffee/fr/footer"
+      ],
+      "description": "French footer fragment with link columns and legal row"
+    },
+    {
+      "name": "placeholders-fragment-fr",
+      "representativePages": [
+        "https://frescopa.coffee/fr/placeholders"
+      ],
+      "urls": [
+        "https://frescopa.coffee/fr/placeholders"
+      ],
+      "description": "French placeholders configuration fragment as key-value content"
+    },
+    {
+      "name": "search-page-fr",
+      "representativePages": [
+        "https://frescopa.coffee/fr/search"
+      ],
+      "urls": [
+        "https://frescopa.coffee/fr/search"
+      ],
+      "description": "French search results layout with search box and results region"
+    },
+    {
+      "name": "locale-homepage-jp",
+      "representativePages": [
+        "https://frescopa.coffee/jp"
+      ],
+      "urls": [
+        "https://frescopa.coffee/jp"
+      ],
+      "description": "Japanese locale homepage with hero banner and feature sections"
+    },
+    {
+      "name": "footer-fragment-jp",
+      "representativePages": [
+        "https://frescopa.coffee/jp/footer"
+      ],
+      "urls": [
+        "https://frescopa.coffee/jp/footer"
+      ],
+      "description": "Japanese footer fragment with link columns and legal row"
+    },
+    {
+      "name": "placeholders-fragment-jp",
+      "representativePages": [
+        "https://frescopa.coffee/jp/placeholders"
+      ],
+      "urls": [
+        "https://frescopa.coffee/jp/placeholders"
+      ],
+      "description": "Japanese placeholders configuration fragment as key-value content"
+    },
+    {
+      "name": "search-page-jp",
+      "representativePages": [
+        "https://frescopa.coffee/jp/search"
+      ],
+      "urls": [
+        "https://frescopa.coffee/jp/search"
+      ],
+      "description": "Japanese search results layout with search box and results region"
+    },
+    {
+      "name": "mini-cart-fragment",
+      "representativePages": [
+        "https://frescopa.coffee/mini-cart"
+      ],
+      "urls": [
+        "https://frescopa.coffee/mini-cart"
+      ],
+      "description": "Mini cart fragment listing cart items with totals and checkout link"
+    },
+    {
+      "name": "search-page",
+      "representativePages": [
+        "https://frescopa.coffee/search"
+      ],
+      "urls": [
+        "https://frescopa.coffee/search"
+      ],
+      "description": "Default search results layout with search box and results region"
+    },
+    {
+      "name": "variations-index",
+      "representativePages": [
+        "https://frescopa.coffee/variations"
+      ],
+      "urls": [
+        "https://frescopa.coffee/variations"
+      ],
+      "description": "Index page listing experiment and content variation entries"
+    }
+  ]
+}

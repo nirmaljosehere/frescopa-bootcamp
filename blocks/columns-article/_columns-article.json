@@ -1,0 +1,33 @@
+{
+  "definitions": [
+    {
+      "title": "Columns Article",
+      "id": "columns-article",
+      "model": "columns-article",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 1,
+          "fields": [
+            { "name": "text", "selector": "div>div" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "columns-article",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Content (heading + paragraph)",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

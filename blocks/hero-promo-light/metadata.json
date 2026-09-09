@@ -1,0 +1,38 @@
+{
+  "variantName": "hero-promo-light",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-06-12T09:23:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://frescopa.coffee/",
+    "originPage": "homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "purpose": "hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "eyebrow + heading + 1 CTA + background image",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage promotional banners",
+      "quiz / campaign banners with a warm background image",
+      "single-CTA full-width intros"
+    ],
+    "notSuitableFor": [
+      "text-only heroes",
+      "dark photographic heroes with multiple CTAs"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index", "/coffee"],
+    "reuseCount": 2,
+    "lastUsed": "2026-06-13T08:45:00.000Z"
+  }
+}

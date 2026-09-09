@@ -1,0 +1,156 @@
+.hero-promo-light {
+  position: relative;
+  background-color: rgb(235 164 57);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* banner image is an absolutely-positioned cover background */
+.hero-promo-light > div:first-child {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-promo-light picture {
+  display: block;
+  height: 100%;
+}
+
+.hero-promo-light picture img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 100% 50%;
+}
+
+/* foreground content sits in normal flow on top, dictating block height */
+.hero-promo-light > div:last-child {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 320px;
+  padding: 24px 32px;
+}
+
+.hero-promo-light h1,
+.hero-promo-light h2,
+.hero-promo-light h3,
+.hero-promo-light h4,
+.hero-promo-light h5,
+.hero-promo-light h6 {
+  color: var(--color-neutral-50);
+  margin: 8px 0;
+
+  /* match original homepage hero heading: same Baskerville/serif stack (no
+     heavier Libre Baskerville fallback), 54px, tight leading, no tracking.
+     pinned so it's identical whether authored as h1 or h3 */
+  font-family: Baskerville, serif;
+  font-size: 54px;
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: normal;
+}
+
+/* keep the heading regular weight even if the text was authored as bold
+   (a stray <strong> inside the heading would otherwise render it too heavy) */
+.hero-promo-light h1 strong,
+.hero-promo-light h2 strong,
+.hero-promo-light h3 strong,
+.hero-promo-light h4 strong,
+.hero-promo-light h5 strong,
+.hero-promo-light h6 strong,
+.hero-promo-light h1 b,
+.hero-promo-light h2 b,
+.hero-promo-light h3 b,
+.hero-promo-light h4 b,
+.hero-promo-light h5 b,
+.hero-promo-light h6 b {
+  font-weight: 400;
+}
+
+.hero-promo-light p {
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* eyebrow label (first paragraph) */
+.hero-promo-light > div:last-child > div > p:first-child {
+  font-family: var(--body-font-family);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 600px) {
+  .hero-promo-light h1,
+  .hero-promo-light h2,
+  .hero-promo-light h3,
+  .hero-promo-light h4,
+  .hero-promo-light h5,
+  .hero-promo-light h6,
+  .hero-promo-light p {
+    max-width: 60%;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero-promo-light > div:last-child {
+    min-height: 420px;
+  }
+}
+
+.hero-promo-light a:any-link {
+  display: inline-block;
+  margin-top: 8px;
+  padding: var(--brand-button-padding);
+  border-radius: var(--brand-button-radius);
+  background-color: var(--brand-primary-color);
+  color: var(--color-neutral-50);
+  font-weight: 500;
+  letter-spacing: var(--brand-button-letter-spacing);
+  text-decoration: none;
+}
+
+.hero-promo-light a:any-link:hover {
+  background-color: var(--brand-primary-hover-color);
+  color: var(--color-neutral-50);
+  text-decoration: none;
+}
+
+/* dark variant (coffee category hero): full-bleed image banner, white text,
+   shorter band than the homepage promo hero */
+.section.dark .hero-promo-light > div:last-child {
+  min-height: 200px;
+}
+
+.section.dark .hero-promo-light > div:last-child > div > p,
+.section.dark .hero-promo-light > div:last-child > div > p:first-child {
+  color: var(--color-neutral-50);
+}
+
+/* the coffee banner illustration spans the full width — center it horizontally
+   and anchor the crop near the bottom so the image shifts up within the block
+   and more of the three cups shows (homepage hero keeps its right-anchored crop) */
+.section.dark .hero-promo-light picture img {
+  object-position: 50% 60%;
+}
+
+@media (min-width: 900px) {
+  .section.dark .hero-promo-light > div:last-child {
+    min-height: 240px;
+  }
+}
+
+/* fill the image wrapper chain so object-fit: cover engages and the
+   object-position crop is honored (otherwise the wrapper collapses to the
+   image's natural height and the lower part of the banner is hidden) */
+/* stylelint-disable-next-line no-descending-specificity */
+.hero-promo-light > div:first-child > div {
+  height: 100%;
+}

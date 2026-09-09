@@ -1,0 +1,103 @@
+/*
+ * cards-numbered
+ * Ordered list of editorial cards: image + 36px heading + rich multi-paragraph
+ * body. White cards, 5px radius, automatic number badge per card.
+ * Source: frescopa.coffee/sustainability "section numbered cards".
+ */
+
+.cards-numbered > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  counter-reset: cards-numbered-counter;
+}
+
+.cards-numbered > ul > li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  counter-increment: cards-numbered-counter;
+}
+
+/* large faint serif numeral sitting BEHIND the card text (watermark) */
+.cards-numbered > ul > li::before {
+  content: counter(cards-numbered-counter);
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  right: 8%;
+  transform: translateY(-50%);
+  font-family: var(--heading-font-family);
+  font-size: 320px;
+  font-weight: 700;
+  line-height: 1;
+  color: rgb(0 0 0 / 6%);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* keep the actual card content above the watermark number */
+.cards-numbered .cards-numbered-card-image,
+.cards-numbered .cards-numbered-card-body {
+  position: relative;
+  z-index: 1;
+}
+
+.cards-numbered .cards-numbered-card-image {
+  line-height: 0;
+}
+
+.cards-numbered .cards-numbered-card-image picture,
+.cards-numbered .cards-numbered-card-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.cards-numbered .cards-numbered-card-body h3 {
+  font-size: 36px;
+  line-height: 1.15;
+  margin: 0 0 16px;
+}
+
+.cards-numbered .cards-numbered-card-body p {
+  margin: 0 0 12px;
+}
+
+.cards-numbered .cards-numbered-card-body strong {
+  display: inline-block;
+  margin-top: 8px;
+}
+
+@media (min-width: 900px) {
+  .cards-numbered > ul > li {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  /* alternate the layout: odd rows image-left/text-right,
+     even rows image-right/text-left (matches the source) */
+  .cards-numbered > ul > li:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .cards-numbered .cards-numbered-card-image {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+
+  .cards-numbered .cards-numbered-card-body {
+    flex: 1 1 auto;
+    max-width: 600px;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "status": "success",
+  "url": "https://frescopa.coffee/coffee",
+  "path": "coffee",
+  "timestamp": "2026-06-13T12:26:05.609Z",
+  "title": "Frescopa Coffee",
+  "template": "coffee-category",
+  "blocks": [
+    "hero-promo-light",
+    "cards-product",
+    "cards-product",
+    "columns-offer",
+    "columns-article"
+  ]
+}

@@ -1,0 +1,18 @@
+.columns-offer {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.columns-offer > div {
+  display: flex;
+}
+
+.columns-offer > div > div {
+  flex: 1;
+}
+
+.columns-offer img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

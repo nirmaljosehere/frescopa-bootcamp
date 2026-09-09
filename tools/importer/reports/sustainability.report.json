@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "url": "https://frescopa.coffee/sustainability",
+  "path": "sustainability",
+  "timestamp": "2026-06-13T17:27:04.696Z",
+  "title": "Sustainability",
+  "template": "content-guide-page-alt",
+  "blocks": [
+    "hero-teaser-teal",
+    "cards-numbered",
+    "embed-video"
+  ]
+}

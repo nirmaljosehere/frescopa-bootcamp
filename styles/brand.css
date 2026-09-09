@@ -1,0 +1,22 @@
+:root {
+  --heading-font-family: "Baskerville", "Libre Baskerville", georgia, serif;
+  --body-font-family: "Roboto", roboto-fallback, system-ui, sans-serif;
+  --brand-background-color: #fff;
+  --brand-text-color: rgb(88 24 29);
+  --brand-link-color: rgb(88 24 29);
+  --brand-link-hover-color: rgb(120 40 46);
+  --brand-nav-height: 70px;
+  --brand-primary-color: rgb(0 100 125);
+  --brand-primary-hover-color: rgb(0 78 98);
+  --brand-accent-color: rgb(149 53 29);
+  --brand-accent-hover-color: rgb(120 42 22);
+  --brand-button-radius: 24px;
+  --brand-button-padding: 8px 19.2px;
+  --brand-button-letter-spacing: 1.28px;
+  --heading-size-xxl: 48px;
+  --heading-size-xl: 48px;
+  --heading-size-l: 54px;
+  --heading-size-m: 32px;
+  --heading-size-s: 24px;
+  --heading-size-xs: 18px;
+}

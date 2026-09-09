@@ -1,0 +1,205 @@
+footer {
+    background-color: rgb(244 233 220);
+    color: rgb(88 24 29);
+    font-family: var(--body-font-family, roboto, sans-serif);
+    font-size: 13px;
+}
+
+footer .footer > div {
+    margin: auto;
+    max-width: 1200px;
+    padding: 40px 24px 24px;
+}
+
+footer .footer p {
+    margin: 0;
+}
+
+.storeview-switcher-button {
+    background: transparent;
+    padding-left: 0;
+}
+
+.storeview-modal-storeview-title {
+    margin-bottom: var(--spacing-xxbig);
+    padding-inline-start: var(--spacing-xbig);
+}
+
+.modal .close-button {
+    top: 40px !important;
+    right: 40px !important;
+}
+
+.storeview-single-store {
+    list-style-type: none;
+}
+
+.storeview-selection .storeview-multiple-stores {
+    list-style-image: url("../../icons/chevron-right.svg");
+    list-style-position: inside;
+}
+
+.storeview-selection > li {
+    margin-bottom: var(--spacing-small);
+}
+
+.storeview-multiple-stores > ul {
+    position: relative;
+    width: 100%;
+}
+
+.storeview-multiple-stores > ul > li {
+    list-style: none;
+    display: none;
+}
+
+.storeview-multiple-stores[aria-expanded="true"] {
+    list-style-image: url("../../icons/chevron-down.svg");
+}
+
+.storeview-multiple-stores[aria-expanded="true"] > ul {
+    padding-left: 0;
+}
+
+.storeview-multiple-stores[aria-expanded="true"] > ul > li {
+    display: block;
+    list-style-type: none;
+    margin-bottom: var(--spacing-small);
+}
+
+@media (min-width: 900px) {
+    footer .footer > div {
+        padding: 40px 32px 24px;
+    }
+}
+
+/* Fréscopa footer: brand block (left) + columns (right) side by side */
+footer .footer .columns-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+footer .footer .columns-container > .default-content-wrapper {
+    flex: 0 0 auto;
+}
+
+footer .footer .columns-container > .columns-wrapper {
+    flex: 1 1 auto;
+    width: 100%;
+}
+
+@media (min-width: 900px) {
+    footer .footer .columns-container {
+        flex-direction: row;
+        gap: 80px;
+    }
+
+    footer .footer .columns-container > .default-content-wrapper {
+        flex: 0 0 240px;
+    }
+}
+
+/* Fréscopa footer brand block + columns */
+footer .footer .default-content-wrapper h6 {
+    margin: 0 0 8px;
+    font-family: var(--body-font-family, roboto, sans-serif);
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(88 24 29);
+    text-transform: none;
+}
+
+footer .footer .default-content-wrapper p {
+    margin: 0 0 6px;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+footer .footer .default-content-wrapper p em {
+    font-style: italic;
+}
+
+footer .footer .icon-frescopa_logo,
+footer .footer .icon-frescopa_logo img {
+    width: 200px;
+    height: auto;
+}
+
+/* Logo authored as an image (picture) in the footer brand block */
+footer .footer .default-content-wrapper picture {
+    display: inline-block;
+    width: 200px;
+    max-width: 100%;
+}
+
+footer .footer .default-content-wrapper picture img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+footer .footer a {
+    color: rgb(88 24 29);
+    text-decoration: none;
+}
+
+footer .footer a:hover {
+    text-decoration: underline;
+}
+
+/* Columns block (5 link columns) */
+footer .footer .columns > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+footer .footer .columns > div > div {
+    flex: 1 1 0;
+    min-width: 140px;
+}
+
+footer .footer .columns h6 {
+    margin: 0 0 12px;
+    font-family: var(--body-font-family, roboto, sans-serif);
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(88 24 29);
+    text-transform: none;
+}
+
+footer .footer .columns ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer .footer .columns li {
+    font-size: 13px;
+    line-height: 20px;
+}
+
+footer .footer .columns li a,
+footer .footer .columns li a.button {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    color: rgb(88 24 29);
+    background: none;
+    border: none;
+    border-radius: 0;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+/* Bottom copyright / legal bar */
+footer .footer > div:last-child p {
+    font-size: 12px;
+    line-height: 20px;
+}

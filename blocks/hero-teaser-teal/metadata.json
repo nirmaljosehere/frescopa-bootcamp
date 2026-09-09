@@ -1,0 +1,45 @@
+{
+  "variantName": "hero-teaser-teal",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-06-13T17:18:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://frescopa.coffee/sustainability",
+    "originPage": "sustainability content guide page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "colored",
+    "density": "minimal",
+    "purpose": "hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "heading + intro paragraphs + side image on solid teal rounded card",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "editorial intro banners on a solid brand-color background",
+      "teaser units combining heading + body copy + a supporting image",
+      "rounded colored hero bands with white text"
+    ],
+    "notSuitableFor": [
+      "full-bleed background-photo heroes (use hero-promo-light)",
+      "text-only solid-color bands (use hero-banner-solid)"
+    ]
+  },
+  "styling": {
+    "background": "rgb(0 100 125)",
+    "textColor": "#ffffff",
+    "borderRadius": "12px",
+    "headingSize": "32px mobile / 40px desktop",
+    "layout": "stacked on mobile, text + image side-by-side at >=900px"
+  },
+  "usage": {
+    "pagesUsing": ["/sustainability"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-13T17:18:00.000Z"
+  }
+}

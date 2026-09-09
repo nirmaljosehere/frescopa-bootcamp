@@ -1,0 +1,64 @@
+/* section sits on white, not the boilerplate grey "light" band */
+main .section.light.cards-feature-container {
+  background-color: transparent;
+}
+
+.cards-feature > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.cards-feature > ul > li {
+  background-color: var(--background-color);
+  border-radius: 12px;
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 12%);
+  overflow: hidden;
+}
+
+.cards-feature .cards-feature-card-image {
+  line-height: 0;
+}
+
+.cards-feature > ul > li img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.cards-feature .cards-feature-card-body {
+  padding: 24px;
+}
+
+.cards-feature .cards-feature-card-body :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: 0;
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+.cards-feature .cards-feature-card-body a:any-link {
+  display: inline-block;
+  margin-top: 8px;
+  padding: var(--brand-button-padding);
+  border-radius: var(--brand-button-radius);
+  background-color: var(--brand-primary-color);
+  color: var(--color-neutral-50);
+  font-weight: 500;
+  letter-spacing: var(--brand-button-letter-spacing);
+  text-decoration: none;
+}
+
+.cards-feature .cards-feature-card-body a:any-link:hover {
+  background-color: var(--brand-primary-hover-color);
+  color: var(--color-neutral-50);
+  text-decoration: none;
+}
+
+@media (min-width: 900px) {
+  .cards-feature > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "definitions": [
+    {
+      "title": "Hero Banner Solid",
+      "id": "hero-banner-solid",
+      "model": "hero-banner-solid",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 1,
+          "fields": [
+            { "name": "text", "selector": "div>div" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "hero-banner-solid",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Content (eyebrow + heading)",
+          "valueType": "string"
+        },
+        {
+          "component": "select",
+          "name": "classes",
+          "label": "Color",
+          "valueType": "string",
+          "value": "",
+          "options": [
+            { "name": "Yellow (default)", "value": "" },
+            { "name": "Blue", "value": "blue" },
+            { "name": "Black", "value": "black" }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

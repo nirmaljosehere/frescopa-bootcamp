@@ -1,0 +1,11 @@
+{
+  "repositoryId": "author-p158081-e1683323.adobeaemcloud.com",
+  "aemTierType": "author",
+  "rootPath": "/content/dam/haug-frescopa",
+  "blockConfig": [
+    {
+      "blockName": "image",
+      "mimeType": "image/*"
+    }
+  ]
+}

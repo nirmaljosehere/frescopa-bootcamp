@@ -1,0 +1,41 @@
+{
+  "definitions": [
+    {
+      "title": "Columns Reward",
+      "id": "columns-reward",
+      "model": "columns-reward",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 2,
+          "fields": [
+            { "name": "text", "selector": "div>div:nth-child(1)" },
+            { "name": "cta", "selector": "div>div:nth-child(2)" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "columns-reward",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Content (heading + copy)",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "cta",
+          "value": "",
+          "label": "Call to action",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "url": "https://frescopa.coffee/event-registration",
+  "path": "event-registration",
+  "timestamp": "2026-06-12T10:35:35.464Z",
+  "title": "Event Registration",
+  "template": "homepage",
+  "blocks": [
+    "hero-promo-light"
+  ]
+}

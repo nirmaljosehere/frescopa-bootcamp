@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-offer",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-06-13T08:45:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://frescopa.coffee/coffee",
+    "originPage": "coffee category page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "accent",
+    "density": "minimal",
+    "purpose": "promo",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "offer copy + CTA on a warm banner background",
+    "buttonCount": 1,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "limited-time offer / promotional banners on a warm colored background",
+      "full-width call-out with copy on one side and a CTA on the other",
+      "campaign / discount banners"
+    ],
+    "notSuitableFor": [
+      "light icon + heading + paragraph promos (use columns-promo)",
+      "accent reward illustration banners (use columns-reward)",
+      "text-only editorial panels (use columns-article)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/coffee"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-13T08:45:00.000Z"
+  }
+}

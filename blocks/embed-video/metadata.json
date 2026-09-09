@@ -1,0 +1,44 @@
+{
+  "variantName": "embed-video",
+  "baseBlock": "embed",
+  "version": "1.0.0",
+  "created": "2026-06-13T17:18:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://frescopa.coffee/sustainability",
+    "originPage": "sustainability content guide page",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "purpose": "embed",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "single video URL rendered as a contained 16:9 iframe (supports Adobe Dynamic Media /play URLs, YouTube, Vimeo, Twitter/X)",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "Adobe Dynamic Media video embeds (/adobe/assets/urn:... /play)",
+      "YouTube / Vimeo video embeds",
+      "any third-party iframe video needing a responsive 16:9 frame"
+    ],
+    "notSuitableFor": [
+      "interactive map embeds (use embed-map)",
+      "structured card or column layouts"
+    ]
+  },
+  "styling": {
+    "aspectRatio": "16 / 9",
+    "maxWidth": "1000px",
+    "margin": "32px auto",
+    "autoplay": "supported when a placeholder image is clicked; generic iframe allows autoplay + encrypted-media"
+  },
+  "usage": {
+    "pagesUsing": ["/sustainability"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-13T17:18:00.000Z"
+  }
+}

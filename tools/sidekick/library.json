@@ -1,0 +1,22 @@
+{
+  "total": 13,
+  "offset": 0,
+  "limit": 13,
+  "data": [
+    { "name": "Hero Promo Light", "path": "/tools/sidekick/blocks/hero-promo-light" },
+    { "name": "Hero Banner Solid", "path": "/tools/sidekick/blocks/hero-banner-solid" },
+    { "name": "Hero Teaser Teal", "path": "/tools/sidekick/blocks/hero-teaser-teal" },
+    { "name": "Columns Promo", "path": "/tools/sidekick/blocks/columns-promo" },
+    { "name": "Columns Reward", "path": "/tools/sidekick/blocks/columns-reward" },
+    { "name": "Columns Offer", "path": "/tools/sidekick/blocks/columns-offer" },
+    { "name": "Columns Article", "path": "/tools/sidekick/blocks/columns-article" },
+    { "name": "Cards Tiles", "path": "/tools/sidekick/blocks/cards-tiles" },
+    { "name": "Cards Feature", "path": "/tools/sidekick/blocks/cards-feature" },
+    { "name": "Cards Product", "path": "/tools/sidekick/blocks/cards-product" },
+    { "name": "Cards Numbered", "path": "/tools/sidekick/blocks/cards-numbered" },
+    { "name": "Embed Map", "path": "/tools/sidekick/blocks/embed-map" },
+    { "name": "Embed Video", "path": "/tools/sidekick/blocks/embed-video" }
+  ],
+  "columns": ["name", "path"],
+  ":type": "sheet"
+}
