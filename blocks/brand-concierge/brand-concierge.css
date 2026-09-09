@@ -1,25 +1,25 @@
 /* Brand Concierge block */
 
+/* The agent is a container-query widget: it picks mobile/tablet/desktop layout
+   from the width of its OWN mount, not the viewport. In a normal EDS content
+   column the mount is < 768px, so it renders the cramped mobile layout (text
+   pills, no image cards). Break the block out to full viewport width so it
+   measures "desktop" and renders the proper card grid. The agent centers its
+   own content at --content-width-desktop (800px), so full-bleed doesn't
+   over-stretch the chat column. */
 .brand-concierge {
-  width: 100%;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
-/* Give the agent a stable, measurable box before it mounts, so it doesn't
-   render into a zero/auto-height container and flash/overlap on load. */
+/* Give the agent a stable, tall box to mount into so it doesn't render into a
+   zero/auto-height container and flash on load. */
 .brand-concierge .brand-concierge-mount {
   position: relative;
   width: 100%;
-  min-height: 80vh;      /* reserve space up front */
-  display: flex;
-  flex-direction: column;
-}
-
-/* Constrain the chat interface to a sensible column, matching the theme's
-   --chat-interface-max-width, and center it. */
-.brand-concierge .brand-concierge-mount > * {
-  width: 100%;
-  max-width: 768px;
-  margin-inline: auto;
+  min-height: 85vh;
 }
 
 /* Carried over from the original index.html inline <style>. */
