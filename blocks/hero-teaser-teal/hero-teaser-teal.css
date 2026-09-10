@@ -37,11 +37,25 @@
   object-position: 50% 50%;
 }
 
-/* text overlay sits above the image */
+/* readability scrim: darkens behind the text (left/bottom), fades out over
+   the imagery on the right so subjects stay visible */
+.hero-teaser-teal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.25) 40%, rgba(0, 0, 0, 0) 70%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 45%);
+}
+
+/* text overlay sits above the image and scrim */
 .hero-teaser-teal-text {
   position: relative;
   z-index: 1;
   color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
 }
 
 .hero-teaser-teal-text h1,
