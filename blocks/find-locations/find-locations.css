@@ -1,0 +1,552 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskerville:wght@400;500;600;700&family=Roboto:wght@300;400;500;600;700&display=swap');
+
+/* Required for correct iframe sizing — AEM section margins inflate shadow body */
+main > div,
+main > .section,
+main > .section:first-of-type {
+  margin: 0;
+}
+main > .section > div {
+  max-width: none;
+  padding: 0;
+}
+body {
+  overflow: auto; /* auto not hidden — hidden clips scrollHeight used by parent iframe resize */
+}
+
+main .find-locations {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: 8px;
+  max-width: 780px;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+main .find-locations h1, main .find-locations h2, main .find-locations h3,
+main .find-locations [class*="title"], main .find-locations [class*="name"],
+main .find-locations [class*="heading"] {
+  font-family: 'Baskerville', 'Libre Baskerville', Georgia, serif;
+}
+
+/* ---------- no-results fallback ----------
+   Reached ONLY when a host run returns zero stores — never the opening view (see
+   decorate()'s note). Styled as a small centred card so it reads as "nothing to
+   show here, try again" rather than as the widget's front door. */
+
+main .find-locations-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+main .find-locations-form-card {
+  max-width: 400px;
+  width: 100%;
+  background: #00647d;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+main .find-locations-pin {
+  font-size: 28px;
+  opacity: 0.7;
+  color: #fff;
+  margin-bottom: 8px;
+  display: block;
+}
+
+main .find-locations-heading {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 4px 0;
+}
+
+main .find-locations-hint {
+  font-size: 13px;
+  color: #fff;
+  opacity: 0.7;
+  margin: 0 0 12px 0;
+}
+
+main .find-locations-input {
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  color: #333;
+}
+
+main .find-locations-search-btn {
+  background: #00647d;
+  color: #ffffff;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  transition: background-color 0.15s ease;
+}
+
+main .find-locations-search-btn:hover,
+main .find-locations-search-btn:focus-visible {
+  background: #004e62;
+}
+
+/* ---------- results: compact side map + synchronized card row ----------
+   The map is a narrow fixed column, not the hero. A store locator answers
+   "which of these is nearest me", so the addresses and hours have to stay
+   readable at a glance — the map is there to place them, not to be explored.
+   (The travel concepts invert this: there the map IS the content.) */
+
+main .find-locations-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 12px;
+  padding: 4px;
+}
+
+main .find-locations-map {
+  flex: 0 0 232px;
+  min-width: 0;
+  min-height: 240px;
+  border-radius: 12px;
+}
+
+main .find-locations-side {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+main .find-locations-row-wrap {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+main .find-locations-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 12px;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+main .find-locations-row::-webkit-scrollbar {
+  display: none;
+}
+
+main .find-locations-fade {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 48px;
+  height: 100%;
+  pointer-events: none;
+}
+
+main .find-locations-store-card {
+  background: #00647d;
+  border-radius: 12px;
+  padding: 14px;
+  color: #fff;
+  /* Grows to card_max_width when only one or two results come back, shrinks to
+     card_min_width and scrolls once there are more — both documented widths
+     stay load-bearing instead of one being decorative. */
+  flex: 1 1 220px;
+  min-width: 220px;
+  max-width: 260px;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+  cursor: pointer;
+  border-top: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+main .find-locations-store-card.is-selected {
+  border-top-color: #00647d;
+}
+
+main .find-locations-store-card:focus-visible {
+  outline: 3px solid #00647d;
+  outline-offset: -3px;
+}
+
+main .find-locations-store-pin {
+  width: 32px;
+  height: 32px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+main .find-locations-store-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+main .find-locations-store-addr {
+  font-size: 12px;
+  opacity: 0.78;
+  margin-bottom: 4px;
+}
+
+main .find-locations-store-phone {
+  font-size: 12px;
+  color: inherit;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+main .find-locations-store-hours {
+  font-size: 11px;
+  opacity: 0.65;
+}
+
+main .find-locations-store-type {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+  margin-bottom: 6px;
+}
+
+main .find-locations-store-dist {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+main .find-locations-store-cta {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  background: #00647d;
+  color: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.15s ease;
+}
+
+main .find-locations-store-cta:hover,
+main .find-locations-store-cta:focus-visible {
+  background: #004e62;
+}
+
+/* ── Map engine ─────────────────────────────────────────────────────────────
+   Real tiles (Leaflet + Esri) with a zero-dependency projected-pin fallback.
+   The fallback is styled on `.find-locations-map.is-fallback`, which the JS sets when
+   the CDN is blocked or offline. */
+
+main .find-locations-map {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: #2a2a2a;
+  color: #fff;
+}
+
+main .find-locations-map.is-fallback {
+  background: #00647d;
+  border: 1px solid rgba(255,255,255,0.14);
+}
+
+main .find-locations-map-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  opacity: 0.75;
+  z-index: 1;
+}
+
+/* Fallback panel: a suggestion of terrain, not a claim about it. Pins are
+   positioned by relative lat/lng within the result set, so the arrangement is
+   truthful even though the backdrop is decorative. */
+main .find-locations-map-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 50% 42%, #00647d42, transparent 62%),
+    linear-gradient(to right, rgba(255,255,255,0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 100% 100%, 29px 29px, 29px 29px;
+  pointer-events: none;
+}
+
+/* Fallback pin anchor: the panel-relative point a pin hangs off, mirroring what
+   Leaflet's marker host does on the real-tiles path. */
+main .find-locations-map-anchor {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+/* Numbered circular pin (store-locator, and the fallback everywhere). */
+main .find-locations-map-pin {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  margin: -16px 0 0 -16px;
+  padding: 0;
+  border: 2px solid rgba(255,255,255,0.55);
+  border-radius: 50%;
+  background: #00647d;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  /* Above the name pills in the no-network FALLBACK panel, where every pin is an
+     absolutely positioned sibling in one container and z-index actually applies.
+     On a real Leaflet map each marker is its own stacking context, so lifting a
+     demoted pin there is done with setZIndexOffset — see mapDemoteLabelToPin. */
+  z-index: 2;
+}
+
+main .find-locations-map-pin:hover {
+  transform: scale(1.12);
+}
+
+main .find-locations-map-pin.is-active {
+  border-color: #fff;
+  transform: scale(1.18);
+  z-index: 1000;
+}
+
+main .find-locations-map-pin-num {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Name-pill pin with a downward tail (the travel concepts' map view).
+   The pill is content-width, so it can't be centred by a fixed pixel anchor.
+   A transform does it without measuring: shift left by half the pill's own
+   width and up by its full height (plus the 8px tail), putting the tail tip on
+   the coordinate. NOTE — this used to be done in JS with negative margins,
+   which silently did nothing: vertical margins on an `inline-block` don't move
+   the box, they only alter the line box around it. Any rule adding a transform
+   to this element must re-state the translate (see :hover below). */
+main .find-locations-map-label {
+  position: relative;
+  display: inline-block;
+  transform: translate(-50%, calc(-100% - 8px));
+  white-space: nowrap;
+  padding: 5px 11px;
+  border: none;
+  border-radius: 999px;
+  background: #fff;
+  color: #1b1b1b;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.45);
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, transform 0.12s;
+}
+
+main .find-locations-map-label::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 10px;
+  height: 10px;
+  background: inherit;
+  transform: translateX(-50%) rotate(45deg);
+  border-radius: 0 0 2px 0;
+}
+
+main .find-locations-map-label:hover {
+  transform: translate(-50%, calc(-100% - 8px)) scale(1.06);
+}
+
+main .find-locations-map-label.is-active {
+  background: #00647d;
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+main .find-locations-map-pin:focus-visible,
+main .find-locations-map-label:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+/* ── Inlined critical Leaflet layout CSS ────────────────────────────────────
+   Leaflet's tile positioning lives entirely in its stylesheet. If leaflet.css
+   is blocked or resolves late, tiles get no absolute positioning and pile into
+   a small central block (observed in the ChatGPT sandbox). These are the
+   essential positioning rules from leaflet.css@1.9.4, inlined so LAYOUT never
+   depends on the external file — only theming does. */
+main .find-locations .leaflet-pane,
+main .find-locations .leaflet-tile,
+main .find-locations .leaflet-marker-icon,
+main .find-locations .leaflet-marker-shadow,
+main .find-locations .leaflet-tile-container,
+main .find-locations .leaflet-pane > svg,
+main .find-locations .leaflet-pane > canvas,
+main .find-locations .leaflet-zoom-box,
+main .find-locations .leaflet-image-layer,
+main .find-locations .leaflet-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+main .find-locations .leaflet-container {
+  overflow: hidden;
+  font-family: inherit;
+  background: #2a2a2a;
+}
+
+main .find-locations .leaflet-tile,
+main .find-locations .leaflet-marker-icon,
+main .find-locations .leaflet-marker-shadow {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+main .find-locations .leaflet-tile { filter: inherit; visibility: hidden; }
+main .find-locations .leaflet-tile-loaded { visibility: inherit; }
+main .find-locations .leaflet-zoom-animated { transform-origin: 0 0; }
+main .find-locations .leaflet-pane { z-index: 400; }
+main .find-locations .leaflet-tile-pane { z-index: 200; }
+main .find-locations .leaflet-overlay-pane { z-index: 400; }
+main .find-locations .leaflet-shadow-pane { z-index: 500; }
+main .find-locations .leaflet-marker-pane { z-index: 600; }
+main .find-locations .leaflet-tooltip-pane { z-index: 650; }
+main .find-locations .leaflet-popup-pane { z-index: 700; }
+main .find-locations .leaflet-control { z-index: 800; position: relative; float: left; clear: both; pointer-events: auto; }
+
+main .find-locations .leaflet-top,
+main .find-locations .leaflet-bottom {
+  position: absolute;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+main .find-locations .leaflet-top { top: 0; }
+main .find-locations .leaflet-bottom { bottom: 0; }
+main .find-locations .leaflet-left { left: 0; }
+main .find-locations .leaflet-right { right: 0; }
+main .find-locations .leaflet-right .leaflet-control { float: right; }
+
+/* CRITICAL: the EDS global stylesheet sets `main img { max-width:100%;
+   width:auto; height:auto }`, and Leaflet tiles ARE <img> elements. That
+   breaks the grid two ways: max-width:100% clamps a tile inside a momentarily
+   narrow container, and width/height:auto renders the tile at its INTRINSIC
+   size — 512px on a devicePixelRatio-2 display, not the 256 CSS px Leaflet
+   laid the grid out for — so tiles overflow their cells and leave a
+   checkerboard of gaps. Pin tiles to the 256px grid cell and drop the clamp.
+   Markers size themselves inline, so only tiles are pinned here. */
+main .find-locations .leaflet-tile {
+  max-width: none !important;
+  width: 256px !important;
+  height: 256px !important;
+}
+
+main .find-locations .leaflet-pane img,
+main .find-locations .leaflet-marker-icon,
+main .find-locations .leaflet-image-layer,
+main .find-locations .leaflet-container img {
+  max-width: none;
+}
+
+/* Esri's "Dark Gray" canvas is already dark at continental zooms but brightens
+   considerably at street zooms (more road/label fill), so raw tiles read as a
+   pale slab next to cards darkened to luminance <= 0.12. The basemap is
+   greyscale, so darkening costs no hue. */
+main .find-locations .leaflet-tile {
+  filter: brightness(0.72) contrast(1.12);
+}
+
+main .find-locations .leaflet-bar a {
+  background: #333;
+  color: #f4f4f4;
+  border-bottom-color: rgba(255,255,255,0.14);
+}
+
+main .find-locations .leaflet-bar a:hover { background: #444; }
+
+/* Attribution is required by the tile licence, so it must stay visible — but
+   at these panel sizes Leaflet's default size eats the map. Shrink it rather
+   than hiding it. `!important` because leaflet.css loads after this block. */
+main .find-locations .leaflet-control-attribution {
+  background: rgba(20,20,20,0.72) !important;
+  color: #b8c2cc !important;
+  font-size: 8px !important;
+  line-height: 1.35 !important;
+  padding: 0 4px !important;
+}
+
+main .find-locations .leaflet-control-attribution a { color: #8fb8ff !important; }
+
+/* The marker host is a bare positioning anchor — the pin inside carries all the
+   visuals and offsets itself via transform (see -map-label above). */
+main .find-locations-map-marker {
+  background: transparent;
+  border: none;
+}
+
+/* Below the tool-planner width the side-by-side split stops earning its
+   keep — stack, and shrink the map to a locating strip rather than dropping
+   it, so the pin numbers on the cards still refer to something. */
+@media (width <= 560px) {
+  main .find-locations-layout {
+    flex-direction: column;
+  }
+
+  main .find-locations-map {
+    flex: none;
+    min-height: 140px;
+  }
+}
+
+/* Dark mode — dim the outer widget background only; the palette-colored store
+   cards are already dark (lum <= 0.12) and stay branded in both modes. */
+@media (prefers-color-scheme: dark) {
+  main .find-locations { background: transparent; }
+}
+body.dark main .find-locations { background: transparent; }
