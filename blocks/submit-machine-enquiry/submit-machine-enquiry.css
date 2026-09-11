@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Roboto:wght@300;400;500;600;700&display=swap');
+
+/* Required for correct iframe sizing — AEM section margins inflate shadow body */
+main > div,
+main > .section,
+main > .section:first-of-type {
+  margin: 0;
+}
+main > .section > div {
+  max-width: none;
+  padding: 0;
+}
+body {
+  overflow: auto;
+}
+
+main .submit-machine-enquiry {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 300;
+  padding: 8px;
+  max-width: 440px;
+  box-sizing: border-box;
+}
+
+main .submit-machine-enquiry h1,
+main .submit-machine-enquiry h2,
+main .submit-machine-enquiry h3,
+main .submit-machine-enquiry .sme-title {
+  font-family: 'Libre Baskerville', Georgia, serif;
+}
+
+main .submit-machine-enquiry .sme-card {
+  border: 1px solid #58181d;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+/* Header block — darkened palette bg */
+main .submit-machine-enquiry .sme-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+}
+
+main .submit-machine-enquiry .sme-thumb {
+  flex: 0 0 56px;
+  width: 56px;
+  height: 56px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+main .submit-machine-enquiry .sme-header-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+main .submit-machine-enquiry .sme-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.8;
+}
+
+main .submit-machine-enquiry .sme-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+  color: inherit;
+}
+
+main .submit-machine-enquiry .sme-price {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* Form */
+main .submit-machine-enquiry .sme-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+}
+
+main .submit-machine-enquiry .sme-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+main .submit-machine-enquiry .sme-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #95351d;
+}
+
+main .submit-machine-enquiry .sme-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #58181d;
+  border-radius: 4px;
+  font-size: 15px;
+  font-family: inherit;
+  color: #58181d;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+main .submit-machine-enquiry textarea.sme-input {
+  resize: vertical;
+  min-height: 44px;
+}
+
+main .submit-machine-enquiry .sme-input:focus {
+  outline: 2px solid #00647d;
+  outline-offset: 1px;
+  border-color: #00647d;
+}
+
+main .submit-machine-enquiry .sme-input.is-invalid {
+  border-color: #95351d;
+  outline-color: #95351d;
+}
+
+main .submit-machine-enquiry .sme-error {
+  font-size: 12px;
+  color: #95351d;
+  min-height: 0;
+}
+
+main .submit-machine-enquiry .sme-error:empty {
+  display: none;
+}
+
+/* Actions */
+main .submit-machine-enquiry .sme-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+main .submit-machine-enquiry .sme-btn {
+  flex: 1 1 0;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.15s ease, opacity 0.15s ease;
+}
+
+main .submit-machine-enquiry .sme-btn-primary {
+  background: #00647d;
+  color: #ffffff;
+}
+
+main .submit-machine-enquiry .sme-btn-primary:hover,
+main .submit-machine-enquiry .sme-btn-primary:focus-visible {
+  background: #004e62;
+}
+
+main .submit-machine-enquiry .sme-btn-secondary {
+  background: #95351d;
+  color: #ffffff;
+}
+
+main .submit-machine-enquiry .sme-btn-secondary:hover,
+main .submit-machine-enquiry .sme-btn-secondary:focus-visible {
+  opacity: 0.88;
+}
+
+main .submit-machine-enquiry .sme-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* Confirmation */
+main .submit-machine-enquiry .sme-confirm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 12px;
+}
+
+main .submit-machine-enquiry .sme-status-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+main .submit-machine-enquiry .sme-chip {
+  background: #00647d;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+main .submit-machine-enquiry .sme-confid {
+  font-family: 'Roboto Mono', ui-monospace, Menlo, Consolas, monospace;
+  font-size: 13px;
+  color: #58181d;
+  font-weight: 500;
+}
+
+main .submit-machine-enquiry .sme-message {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #58181d;
+}
+
+main .submit-machine-enquiry .sme-ts {
+  font-size: 12px;
+  color: #95351d;
+  opacity: 0.85;
+}
+
+/* Dark mode — dim outer background, keep palette header */
+@media (prefers-color-scheme: dark) {
+  main .submit-machine-enquiry { background: #111; }
+  main .submit-machine-enquiry .sme-card { background: #1a1414; border-color: #d98a7a; }
+  main .submit-machine-enquiry .sme-input { background: #241c1c; color: #f4e9dc; border-color: #d98a7a; }
+  main .submit-machine-enquiry .sme-label { color: #e0a08c; }
+  main .submit-machine-enquiry .sme-message { color: #f4e9dc; }
+  main .submit-machine-enquiry .sme-confid { color: #f4e9dc; }
+  main .submit-machine-enquiry .sme-ts { color: #e0a08c; }
+}
+
+body.dark main .submit-machine-enquiry { background: #111; }
+body.dark main .submit-machine-enquiry .sme-card { background: #1a1414; border-color: #d98a7a; }
+body.dark main .submit-machine-enquiry .sme-input { background: #241c1c; color: #f4e9dc; border-color: #d98a7a; }
+body.dark main .submit-machine-enquiry .sme-label { color: #e0a08c; }
+body.dark main .submit-machine-enquiry .sme-message { color: #f4e9dc; }
+body.dark main .submit-machine-enquiry .sme-confid { color: #f4e9dc; }
+body.dark main .submit-machine-enquiry .sme-ts { color: #e0a08c; }
