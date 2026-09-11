@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Roboto:wght@300;400;500;600;700&display=swap');
+
+/* Required for correct iframe sizing — AEM section margins inflate shadow body */
+main > div,
+main > .section,
+main > .section:first-of-type {
+  margin: 0;
+}
+main > .section > div {
+  max-width: none;
+  padding: 0;
+}
+body {
+  overflow: auto;
+}
+
+main .get-mybarista-subscription-details {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  padding: 8px;
+  max-width: 780px;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+main .get-mybarista-subscription-details h1,
+main .get-mybarista-subscription-details h2,
+main .get-mybarista-subscription-details h3,
+main .get-mybarista-subscription-details [class*="title"] {
+  font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+}
+
+main .get-mybarista-subscription-details-card {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  border-radius: 12px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+main .get-mybarista-subscription-details-image-panel {
+  flex: 0 0 220px;
+  overflow: hidden;
+  background: #ebb439;
+  position: relative;
+}
+
+main .get-mybarista-subscription-details-image-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+main .get-mybarista-subscription-details-image-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+
+main .get-mybarista-subscription-details-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 18px;
+  gap: 8px;
+  background: #00647d;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+main .get-mybarista-subscription-details-title {
+  font-size: 20px !important;
+  font-weight: 700;
+  margin: 0 !important;
+  line-height: 1.2 !important;
+}
+
+main .get-mybarista-subscription-details-badge {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  background: rgba(255,255,255,0.16);
+  border-radius: 999px;
+  padding: 3px 10px;
+  width: fit-content;
+  display: inline-block;
+}
+
+main .get-mybarista-subscription-details-description {
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+  opacity: 0.82;
+  margin: 0 !important;
+}
+
+main .get-mybarista-subscription-details-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 2px 0;
+}
+
+main .get-mybarista-subscription-details-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 12.5px;
+  line-height: 1.35;
+}
+
+main .get-mybarista-subscription-details-step-num {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ebb439;
+  color: #58181d;
+  font-weight: 700;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+main .get-mybarista-subscription-details-step-text {
+  flex: 1;
+  min-width: 0;
+}
+
+main .get-mybarista-subscription-details-meta {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+main .get-mybarista-subscription-details-meta strong {
+  font-weight: 700;
+}
+
+main .get-mybarista-subscription-details-offer {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ebb439;
+}
+
+main .get-mybarista-subscription-details-price {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+}
+
+main .get-mybarista-subscription-details-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 6px;
+}
+
+main .get-mybarista-subscription-details-cta {
+  flex: 1;
+  padding: 11px 10px;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.15s ease;
+}
+
+main .get-mybarista-subscription-details-cta-primary {
+  background: #00647d;
+  color: #ffffff;
+}
+
+main .get-mybarista-subscription-details-cta-primary:hover,
+main .get-mybarista-subscription-details-cta-primary:focus-visible {
+  background: #004e62;
+}
+
+main .get-mybarista-subscription-details-cta-secondary {
+  background: #95351d;
+  color: #ffffff;
+}
+
+main .get-mybarista-subscription-details-cta-secondary:hover,
+main .get-mybarista-subscription-details-cta-secondary:focus-visible {
+  background: #7a2915;
+}
+
+main .get-mybarista-subscription-details-cta:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+main .get-mybarista-subscription-details-empty {
+  padding: 24px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-color, #333);
+}
+
+@media (prefers-color-scheme: dark) {
+  main .get-mybarista-subscription-details { background: transparent; }
+  main .get-mybarista-subscription-details-empty { color: #ddd; }
+}
+body.dark main .get-mybarista-subscription-details { background: transparent; }
+body.dark main .get-mybarista-subscription-details-empty { color: #ddd; }
+
+@media (max-width: 560px) {
+  main .get-mybarista-subscription-details-card {
+    flex-direction: column;
+  }
+  main .get-mybarista-subscription-details-image-panel {
+    flex: 0 0 140px;
+    height: 140px;
+  }
+}
