@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Roboto:wght@300;400;500;600;700&display=swap');
+
+/* Required for correct iframe sizing — AEM section margins inflate shadow body */
+main > div,
+main > .section,
+main > .section:first-of-type {
+  margin: 0;
+}
+main > .section > div {
+  max-width: none;
+  padding: 0;
+}
+body {
+  overflow: auto;
+}
+
+main .get-product-details {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  padding: 8px;
+  max-width: 640px;
+  box-sizing: border-box;
+}
+
+main .get-product-details h1,
+main .get-product-details h2,
+main .get-product-details h3,
+main .get-product-details [class*="title"] {
+  font-family: 'Libre Baskerville', Georgia, serif;
+}
+
+main .get-product-details .gpd-card {
+  display: flex;
+  flex-direction: row;
+  height: 340px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+main .get-product-details .gpd-image {
+  flex: 0 0 260px;
+  height: 100%;
+  overflow: hidden;
+  background: #ebb439;
+}
+
+main .get-product-details .gpd-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+main .get-product-details .gpd-content {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-sizing: border-box;
+}
+
+main .get-product-details .gpd-chip {
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  color: inherit;
+}
+
+main .get-product-details .gpd-title {
+  margin: 0 !important;
+  font-size: 20px !important;
+  line-height: 1.15 !important;
+  font-weight: 700;
+  color: inherit;
+}
+
+main .get-product-details .gpd-desc {
+  margin: 0 !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  color: inherit;
+  opacity: 0.82;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+main .get-product-details .gpd-attrs {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+main .get-product-details .gpd-attr {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+main .get-product-details .gpd-attr-label {
+  flex: 0 0 auto;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  opacity: 0.7;
+  padding-top: 1px;
+}
+
+main .get-product-details .gpd-attr-value {
+  flex: 1 1 auto;
+  min-width: 0;
+  opacity: 0.9;
+}
+
+main .get-product-details .gpd-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: inherit;
+}
+
+main .get-product-details .gpd-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 8px;
+}
+
+main .get-product-details .gpd-btn {
+  flex: 1 1 0;
+  border: none;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, opacity 0.15s ease;
+}
+
+main .get-product-details .gpd-btn-primary:hover,
+main .get-product-details .gpd-btn-primary:focus-visible {
+  background: #004e62 !important;
+}
+
+main .get-product-details .gpd-btn-secondary:hover,
+main .get-product-details .gpd-btn-secondary:focus-visible {
+  opacity: 0.88;
+}
+
+main .get-product-details .gpd-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+main .get-product-details .gpd-empty {
+  padding: 24px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-color, #333);
+}
+
+@media (max-width: 560px) {
+  main .get-product-details .gpd-card {
+    flex-direction: column;
+    height: auto;
+  }
+  main .get-product-details .gpd-image {
+    flex: 0 0 160px;
+    width: 100%;
+  }
+}
+
+/* Dark mode — dim outer widget background only; keep the palette-colored content panel. */
+@media (prefers-color-scheme: dark) {
+  main .get-product-details { background: #111; }
+  main .get-product-details .gpd-empty { color: #eee; }
+}
+body.dark main .get-product-details { background: #111; }
+body.dark main .get-product-details .gpd-empty { color: #eee; }
