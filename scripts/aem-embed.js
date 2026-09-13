@@ -19,6 +19,36 @@
 
 import { LLMApp } from './llmapps-sdk.js';
 
+// The embed runs inside a host document (ChatGPT/Claude) that never received the
+// `@dropins/*` import map from head.html. When a commerce block is dynamically
+// imported (e.g. get-product-details.js -> @dropins/tools/lib.js), the browser
+// can't resolve the bare specifier and the block fails to render. Re-declare the
+// import map here, at module top level (before any block import()), using this
+// script's own origin so the paths are absolute regardless of the host origin.
+(() => {
+  try {
+    if (document.querySelector('script[type="importmap"]')) return;
+    const url = new URL(import.meta.url);
+    const [codeBasePath] = url.pathname.split('/scripts/');
+    const root = `${url.origin}${codeBasePath}`;
+    const pkgs = [
+      'storefront-account', 'storefront-auth', 'storefront-cart', 'storefront-checkout',
+      'storefront-order', 'storefront-payment-services', 'storefront-pdp',
+      'storefront-recommendations', 'storefront-wishlist', 'storefront-personalization',
+      'storefront-product-discovery', 'tools',
+    ];
+    const imports = {};
+    pkgs.forEach((p) => { imports[`@dropins/${p}/`] = `${root}/scripts/__dropins__/${p}/`; });
+    const script = document.createElement('script');
+    script.type = 'importmap';
+    script.textContent = JSON.stringify({ imports });
+    document.head.appendChild(script);
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.warn('[AEM Embed] Skipped @dropins import map injection:', e);
+  }
+})();
+
 // eslint-disable-next-line import/prefer-default-export
 export class AEMEmbed extends HTMLElement {
   constructor() {
