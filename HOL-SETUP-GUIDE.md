@@ -90,22 +90,39 @@ Authors: new doc → Sidekick → **Library → Templates**.
 
 ## 5. Blocks library
 
-1. Block example docs at `/library/blocks/{block}` (block instance + optional `Library Metadata` → `Description`). Upload each:
-   ```bash
-   for b in hero-teaser-teal cards cards-feature accordion columns-promo; do
-     curl -X POST "https://admin.da.live/source/{{ORG}}/{{SITE}}/library/blocks/$b.html" \
-       -H "Authorization: Bearer $TOKEN" --form "data=@$b.html"
-   done
-   ```
-2. Blocks sheet (`name | path`):
-   ```bash
-   printf '%s' '{"total":1,"limit":1,"offset":0,"data":[{"name":"Cards","path":"https://content.da.live/{{ORG}}/{{SITE}}/library/blocks/cards"}],":type":"sheet"}' > blocks.json
-   curl -X POST "https://admin.da.live/source/{{ORG}}/{{SITE}}/library/blocks.json" \
-     -H "Authorization: Bearer $TOKEN" --form "data=@blocks.json"
-   ```
-3. Site config → **`library`** tab: `Blocks | https://content.da.live/{{ORG}}/{{SITE}}/library/blocks.json`.
+**Do NOT hand-author block example docs with source-API image references** — DA renders `<img>`
+only from **editor-embedded, DA-managed media** (`./media_<hash>`); a path/URL `src` in a
+source-API doc becomes `about:error`. Instead, **reuse the boilerplate's block docs**, which
+already exist at `/tools/sidekick/blocks/*` with correct content and working images.
 
-*(Console alternative to curl: `fd=new FormData(); fd.append('data', new Blob([html],{type:'text/html'}), 'x.html'); await fetch(url,{method:'POST',headers:{Authorization:'Bearer '+TOKEN},body:fd})` — run on a da.live tab.)*
+Build `library/blocks.json` that points at those boilerplate docs (console on a da.live tab):
+
+```js
+{
+  const O = '{{ORG}}', S = '{{SITE}}';
+  const token = 'PASTE_DA_BEARER_TOKEN';
+  const base = `https://content.da.live/${O}/${S}/tools/sidekick/blocks/`;
+  const blocks = [ // names/slugs from /tools/sidekick/library.json
+    ['Hero Promo Light','hero-promo-light'], ['Hero Banner Solid','hero-banner-solid'],
+    ['Hero Teaser Teal','hero-teaser-teal'], ['Columns Promo','columns-promo'],
+    ['Columns Reward','columns-reward'], ['Columns Offer','columns-offer'],
+    ['Columns Article','columns-article'], ['Cards Tiles','cards-tiles'],
+    ['Cards Feature','cards-feature'], ['Cards Product','cards-product'],
+    ['Cards Numbered','cards-numbered'], ['Embed Map','embed-map'], ['Embed Video','embed-video'],
+  ];
+  const data = blocks.map(([name, slug]) => ({ name, path: base + slug }));
+  const sheet = JSON.stringify({ total: data.length, limit: data.length, offset: 0, data, ':type': 'sheet' });
+  const fd = new FormData(); fd.append('data', new Blob([sheet], { type: 'application/json' }), 'blocks.json');
+  console.log((await fetch(`https://admin.da.live/source/${O}/${S}/library/blocks.json`,
+    { method: 'POST', headers: { Authorization: 'Bearer ' + token }, body: fd })).status);
+}
+```
+
+Then: site config → **`library`** tab → `Blocks | https://content.da.live/{{ORG}}/{{SITE}}/library/blocks.json`,
+and **preview** the sheet (step 5b). Authors: Sidekick → **Library → Blocks**.
+
+*(If you truly need custom block examples with images, create the docs in the DA **editor** and
+drag images in — never reference images by path in a source-API upload.)*
 
 ### 5b. Preview the library + template docs (required)
 
@@ -115,15 +132,11 @@ Library shows *"It appears &lt;block&gt; has not been previewed."* Run this in a
 ```js
 const ORG = '{{ORG}}', SITE = '{{SITE}}', REF = 'main';
 const paths = [
-  '/library/templates.json',
-  '/library/blocks.json',
-  '/library/blocks/hero-teaser-teal',
-  '/library/blocks/cards',
-  '/library/blocks/cards-feature',
-  '/library/blocks/accordion',
-  '/library/blocks/columns-promo',
+  '/library/templates.json',   // your template library sheet
+  '/library/blocks.json',      // the sheet that points at /tools/sidekick/blocks/*
   '/templates/product-landing-page',
-  '/templates/placeholder-hero-2400x1000.png',
+  // (boilerplate /tools/sidekick/blocks/* are already previewed; the placeholder image
+  //  only matters if a TEMPLATE references it — preview that image too if so)
 ];
 for (const p of paths) {
   const r = await fetch(`https://admin.hlx.page/preview/${ORG}/${SITE}/${REF}${p}`, {
@@ -230,6 +243,8 @@ Fix the stale boilerplate `sitemap-index.xml` (it points at `www.aemshop.net`):
 - **AEM Assets** needs the `darkalley` env var (Cloud Manager restart) **and** `aem.repositoryId` in the `data` sheet.
 - **Template images** must be **absolute URLs** — relative `./x.png` breaks on insert.
 - **Edit ≠ Preview/Publish.** DA `permissions` = editing; "Not authorized to preview" = missing from `access/admin.json` (`author`/`publish`). Access config takes emails/`*@domain`, not IMS group tuples.
+- **Block-library images / `about:error`** = DA only renders **editor-embedded** media (`./media_hash`); a path/URL `<img src>` in a **source-API** doc always breaks. Reuse the boilerplate `/tools/sidekick/blocks/*` docs (list them in `library/blocks.json`) instead of hand-authoring block docs.
+- **Block inserts wrong card count** = the Library inserts from whatever `library/blocks.json` points at, *not* the doc you're viewing. Check the path in that sheet.
 - **LLM widget shows `placeholder`** = missing `@dropins` import map in the embed iframe → `scripts/aem-embed.js` fix.
 - **Widget `domain`** must be unique per template for submission (separate from CSP and from rendering).
 - **Concierge can't crawl** `*.aem.page`/`*.aem.live` (noindex + Disallow) → production domain or proxy.
