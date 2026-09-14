@@ -107,6 +107,33 @@ Authors: new doc → Sidekick → **Library → Templates**.
 
 *(Console alternative to curl: `fd=new FormData(); fd.append('data', new Blob([html],{type:'text/html'}), 'x.html'); await fetch(url,{method:'POST',headers:{Authorization:'Bearer '+TOKEN},body:fd})` — run on a da.live tab.)*
 
+### 5b. Preview the library + template docs (required)
+
+The DA source API only writes to `content.da.live` — it does **not** preview. Until you preview, the
+Library shows *"It appears &lt;block&gt; has not been previewed."* Run this in an `admin.hlx.page` tab:
+
+```js
+const ORG = '{{ORG}}', SITE = '{{SITE}}', REF = 'main';
+const paths = [
+  '/library/templates.json',
+  '/library/blocks.json',
+  '/library/blocks/hero-teaser-teal',
+  '/library/blocks/cards',
+  '/library/blocks/cards-feature',
+  '/library/blocks/accordion',
+  '/library/blocks/columns-promo',
+  '/templates/product-landing-page',
+  '/templates/placeholder-hero-2400x1000.png',
+];
+for (const p of paths) {
+  const r = await fetch(`https://admin.hlx.page/preview/${ORG}/${SITE}/${REF}${p}`, {
+    method: 'POST', credentials: 'include',
+  });
+  console.log('preview', p, r.status); // expect 200
+}
+// To also publish, repeat with .../live/... instead of .../preview/...
+```
+
 ## 6. Permissions — TWO separate systems
 
 **6a. DA content edit** — DA **org** config `da.live/config#/{{ORG}}/` → **`permissions`** sheet (`path | groups | actions`):
@@ -198,6 +225,7 @@ Fix the stale boilerplate `sitemap-index.xml` (it points at `www.aemshop.net`):
 ## Appendix — Gotchas
 
 - **DA sheets need a header row** (`key|value`, `title|path`, `path|groups|actions`, `name|path`); data starts row 2. Missing header = config silently ignored.
+- **Source API ≠ preview.** Docs created via `admin.da.live/source/…` exist only in `content.da.live`; you must **preview** them (`admin.hlx.page/preview/…`) or the Library shows *"has not been previewed"* (step 5b). This is separate from the access grant.
 - **PDP routing** = `folders.json` mapping **and** a published `/products/default`. Both required.
 - **AEM Assets** needs the `darkalley` env var (Cloud Manager restart) **and** `aem.repositoryId` in the `data` sheet.
 - **Template images** must be **absolute URLs** — relative `./x.png` breaks on insert.
